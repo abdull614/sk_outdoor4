@@ -1,0 +1,67 @@
+.hero {
+    height: 50vh;
+    background-image: url(../asset/header-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .container {
+    padding: 2rem 7%;
+    padding-top: 8rem;
+    text-align: center;
+}
+
+.hero .container .hero-content {
+    margin-bottom: 2rem;
+    font-weight: bold;
+}
+
+.hero .container .hero-content h1 {
+    font-style: italic;
+    font-size: clamp(3rem, 5vw, 10rem);
+    text-shadow: 2px 2px 4px #000;
+    line-height: clamp(2.5rem, 5vw, 7rem);
+    padding-bottom: 2rem;
+}
+
+.hero .container .hero-content h1 .text-white {
+    color: #fff;
+}
+
+.hero .container .hero-content h1 .text-primary {
+    color: var(--primary);
+}
+
+/* content */
+.content {
+    background-color: #fff;
+    display: flex;
+}
+
+.container-content {
+    padding: 4rem 7%;
+}
+
+.container-content .text-black {
+    color: #000;
+}
+
+.container-content .text-primary {
+    color: var(--primary);
+}
+
+.container-content h1 {
+    font-size: clamp(1rem, 4vw, 8rem);
+    font-style: italic;
+    margin-bottom: .3rem;
+    font-weight: bold;
+}
+
+.container-content h2 {
+    margin-bottom: 1rem;
+}
