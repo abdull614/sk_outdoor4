@@ -29,7 +29,7 @@ Route::get('/register', [
 
 Route::post('/register', [
     AuthController::class, 'register'
-])->name('regis.regisProses');
+])->name('register');
 
 // page
 Route::get('/', [

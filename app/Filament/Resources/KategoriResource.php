@@ -27,7 +27,6 @@ class KategoriResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('deskripsi')
-                    ->required()
                     ->columnSpanFull(),
             ]);
     }

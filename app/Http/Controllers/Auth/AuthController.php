@@ -43,28 +43,30 @@ class AuthController extends Controller
 
     // regis / ambil data
     public function register(Request $request)
-{
-    try {
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:6|confirmed',
-        ]);
+    {
+        try {
+            $validated = $request->validate([
+                'name' => 'required|string|max:255',
+                'email' => 'required|email|unique:users',
+                'password' => 'required|min:6|confirmed',
+            ]);
 
-        $user = User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => bcrypt($validated['password']),
-        ]);
+            $user = User::create([
+                'name' => $validated['name'],
+                'email' => $validated['email'],
+                'password' => bcrypt($validated['password']),
+                'role' => 'customer',
+            ]);
+            $user->assignRole('customer');
 
-        Auth::login($user);
+            Auth::login($user);
 
-        return redirect()->route('beranda');
-    } catch (\Exception $e) {
-        Log::error('Error saving user: ' . $e->getMessage());
-        return back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
+            return redirect()->route('beranda');
+        } catch (\Exception $e) {
+            Log::error('Error saving user: ' . $e->getMessage());
+            return back()->with('error', 'Terjadi kesalahan saat menyimpan data.');
+        }
     }
-}
 
 
 
@@ -87,18 +89,21 @@ class AuthController extends Controller
                 $user = User::create([
                     'name' => $googleUser->getName(),
                     'email' => $googleUser->getEmail(),
-                    'password' => bcrypt('google_default_password'), // opsional
+                    'password' => bcrypt('google_default_password'),
+                    'role' => 'customer',
                 ]);
-                $user->role = 'customer';
-                $user->save();
+
+                if (!$user->hasRole('customer')) {
+                    $user->assignRole('customer');
+                }
             }
 
-            // Login user
             Auth::login($user);
 
             return redirect()->route('beranda');
 
-            } catch (\Exception $e) {
+        } catch (\Exception $e) {
+            Log::error('Google Login Error: ' . $e->getMessage());
             return redirect()->route('login')->with('error', 'Gagal login dengan Google.');
         }
     }

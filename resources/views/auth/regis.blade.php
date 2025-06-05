@@ -20,7 +20,7 @@
             <h1>Registrasi</h1>
 
 
-            <form action="{{ route('regis.regisProses') }}" method="POST">
+            <form action="{{ route('register') }}" method="POST">
                 @csrf
                 <label for="name">Nama</label>
                 <input type="text" id="name" name="name" required>
