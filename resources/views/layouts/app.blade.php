@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     
-
+    @vite(['resource/css/app.css', 'resource/js/app.js'])
     
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

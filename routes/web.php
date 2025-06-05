@@ -5,6 +5,7 @@ use App\Http\Controllers\BerandaController;
 use App\Http\Controllers\CaraSewaController;
 use App\Http\Controllers\HubungiKamiController;
 use App\Http\Controllers\KatalogProdukController;
+use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\SyaratSewaController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,17 @@ Route::get('/login', [
 Route::post('/login', [
     AuthController::class, 'loginProses'
 ])->name('login.proses');
+
+// profil
+Route::get('/profil', [
+    ProfilController::class, 'profil'
+])->name('profil');
+
+Route::get('/profil-change-passowrd', [
+    ProfilController::class, 'password'
+])->name('password');
+
+
 
 // regis
 Route::get('/register', [
