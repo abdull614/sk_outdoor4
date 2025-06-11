@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('custom-css')
-    <link rel="stylesheet" href="css/syaratSewa.css">
+    <link rel="stylesheet" href="{{asset('css/syaratSewa.css')}}">
 @endsection
 
 @section('content')

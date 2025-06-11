@@ -1,7 +1,7 @@
 @extends('profil/index')
 
 @section('custom-css')
-    <link rel="stylesheet" href="css/profil/password.css">
+    <link rel="stylesheet" href="{{ asset('css/profil/password.css')}}">
 @endsection
 
 @section('content')

@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Alamat;
+use App\Models\ContactUser;
+
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -21,6 +24,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'photo',
+        'roler',
         'password',
     ];
 
@@ -46,4 +51,16 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+        public function contact()
+    {
+        return $this->hasOne(ContactUser::class);
+    }
+
+        public function alamat()
+    {
+        return $this->hasOne(Alamat::class);
+    }
+
+
 }

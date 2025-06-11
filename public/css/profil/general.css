@@ -2,6 +2,20 @@
   background-color: aliceblue;
 } */
 
+
+.inisial-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #999;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+
 .profil-content .account-general {
   display: flex;
   flex-direction: column;
@@ -59,4 +73,20 @@
 .form-group textarea:focus {
   box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Efek lebih jelas saat fokus */
   border-color: #888;
+}
+
+.form-group .name {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.form-group .name .btn-primary {
+  padding: .3rem 2%;
+  font-weight: bold;
+  color: #444;
+  border-radius: 1rem;
+  background-color: #b6895b;
 }
