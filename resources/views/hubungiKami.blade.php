@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('custom-css')
-    <link rel="stylesheet" href="css/hubungiKami.css">
+    <link rel="stylesheet" href="{{ asset('css/hubungiKami.css')}}">
 @endsection
 
 @section('content')

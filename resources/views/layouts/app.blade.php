@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     
-    @vite(['resource/css/app.css', 'resource/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -39,11 +39,29 @@
 
     {{-- script nav --}}
     @yield('custom-js')
-    <script src="js/script.js"></script>
+    <script src="{{ asset('js/script.js')}}"></script>
 
     <script>
         feather.replace();
     </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentPath = window.location.pathname;
+
+            // Ambil history dari sessionStorage
+            let history = JSON.parse(sessionStorage.getItem("customHistory")) || [];
+
+            // Hapus duplikat berturut-turut
+            if (history.length === 0 || history[history.length - 1] !== currentPath) {
+                history.push(currentPath);
+            }
+
+            sessionStorage.setItem("customHistory", JSON.stringify(history));
+        });
+    </script>
+
 </body>
 
 </html>

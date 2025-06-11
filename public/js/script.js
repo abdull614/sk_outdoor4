@@ -54,3 +54,41 @@ const masukkanKeranjang = () => {
 const sewaSekarang = () => {
     alert("Anda akan diarahkan ke proses penyewaan.");
 };
+
+
+// tombol kembali
+const excludedRoutes = [
+    "/profil",
+    "/profil-info",
+    "/profil-change-password",
+    "/profil/notif"
+];
+
+const fallbackPage = "/"; // fallback ke beranda jika semua riwayat adalah pengecualian
+
+function goBackSmart() {
+    let history = JSON.parse(sessionStorage.getItem("customHistory")) || [];
+
+    // Hapus halaman saat ini
+    history.pop();
+
+    while (history.length > 0) {
+        const lastPath = history.pop();
+
+        if (!excludedRoutes.includes(lastPath)) {
+            sessionStorage.setItem("customHistory", JSON.stringify(history));
+            window.location.href = lastPath;
+            return;
+        }
+    }
+
+    // Jika hanya halaman pengecualian yang ada, ke fallback
+    window.location.href = fallbackPage;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const backButton = document.querySelector(".btn-go-back");
+    if (backButton) {
+        backButton.addEventListener("click", goBackSmart);
+    }
+});

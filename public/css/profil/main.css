@@ -16,6 +16,7 @@
 body {
     font-family: "Poppins", sans-serif;
     background-color: var(--bg);
+    overflow-x: auto;
 }
 
 .navbar {
@@ -47,6 +48,7 @@ body {
     flex-direction: column;
     width: 100%;
     align-items: center;
+    max-width: none !important;
 }
 
 
@@ -75,7 +77,8 @@ body {
     list-style: none;
 }
 
-.container .card .profil-left .profil-menu a {
+.container .card .profil-left .profil-menu a,
+.container .card .profil-left .profil-menu .btn {
     display: flex;
     padding: 0.75rem 1rem;
     background-color: none;
