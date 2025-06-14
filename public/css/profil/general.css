@@ -1,0 +1,92 @@
+/* .profil-content {
+  background-color: aliceblue;
+} */
+
+
+.inisial-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #999;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.profil-content .account-general {
+  display: flex;
+  flex-direction: column;
+}
+
+.profil-content .account-general .media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  height: 17rem;
+  border-bottom: 1px solid #000;
+}
+
+.profil-content .account-general .media .profil-img {
+  width: clamp(120px, 40vw, 200px);
+  height: clamp(120px, 40vw, 200px);
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+
+.profil-content .account-general .media .btn {
+  color: #096d00;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.profil-content .account-general .media .btn:hover {
+  color: blue;
+}
+
+
+.form-group {
+  margin-top: 2rem;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.form-group input,
+.form-group textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Efek timbul */
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2); /* Efek lebih jelas saat fokus */
+  border-color: #888;
+}
+
+.form-group .name {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.form-group .name .btn-primary {
+  padding: .3rem 2%;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 1rem;
+  background-color: #b6895b;
+}

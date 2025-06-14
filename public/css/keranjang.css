@@ -1,0 +1,77 @@
+/* Full Page Centering */
+.container-keranjang {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 95vh; /* Biar footer tetap di bawah */
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+}
+
+h1 {
+    color: #000;
+    font-size: clamp(1rem, 1.7vw, 2rem);
+    margin-bottom: 85px;
+    position: relative;
+    font-weight: bold;
+}
+
+h1::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #a86c3d;
+    margin: 5px auto 0 auto;
+}
+
+.cart-icon {
+    width: 120px;
+    margin: 20px 0;
+}
+
+.empty-text {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.btn-sewa {
+    background-color: #b4845c;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-sewa:hover {
+    background-color: #a86c3d;
+    transform: translateY(-2px);
+}
+
+.item-keranjang {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.item-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
